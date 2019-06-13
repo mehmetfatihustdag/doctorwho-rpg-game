@@ -6,7 +6,7 @@ Command Line RPG Game based on Dr.Who TV Series
 A step by step series how to install the game
 ```
 git clone https://github.com/mehmetfatihustdag/doctorwho-rpg-game
-cd {project directory}
+cd doctorwho-rpg-game
 mvn install -DskipTests
 cd target/classes
 java com.company.main.Main
