@@ -14,15 +14,21 @@ import java.util.Scanner;
 public  class Input {
     /** Keyword <i>static</i> makes this a <i>class</i> oriented variable, rather than <i>object</i> oriented variable; only one instance of an <i>Input</i> object will ever exist, and the instance is tracked by this reference
      variable. */
-    private static Input referenceToSingleInputObject = null;
+    private static volatile Input referenceToSingleInputObject = null;
     /** Object-oriented instance variable, but since only one <i>Input</i> can ever be created, only one <i>scanner</i> object will ever be created. */
-    private static Scanner scannerKeyboard ;
+    private  static Scanner scannerKeyboard ;
     /** A <i>private</i> constructor guarantees that no <i>Input</i> object can be created from outside the <i>Input</i> class; this is essential for the <i>singleton</i> design pattern. */
-    private Input() { scannerKeyboard = new Scanner(System.in); }
+    private Input() {
+        scannerKeyboard =  new Scanner(System.in);
+    }
     /** The <i>static</i> modifier means this method can be called without the existence of an <i>Input</i> object; if no <i>Input</i> object exists one will be created; if one already exists, it will be re-used. */
     public static Input getInstance() {
-        if (referenceToSingleInputObject == null)
-            referenceToSingleInputObject = new Input();
+        if (referenceToSingleInputObject == null){
+            synchronized (Input.class){
+                if(referenceToSingleInputObject ==null)
+                    referenceToSingleInputObject = new Input();
+            }
+        }
         return referenceToSingleInputObject;
     } // end static Input getInstance()
 

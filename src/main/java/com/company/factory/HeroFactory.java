@@ -3,6 +3,12 @@ package com.company.factory;
 import com.company.entities.Hero;
 import com.company.entities.HeroPersonality;
 
+import static com.company.constant.GameConstants.ANGRY_HERO_STRENGTH;
+import static com.company.constant.GameConstants.COMMANDER_HERO_STRENGTH;
+import static com.company.constant.GameConstants.DEBATER_HERO_STRENGTH;
+import static com.company.constant.GameConstants.HERO_EXPERIENCE;
+import static com.company.constant.GameConstants.HERO_HEALTH;
+
 /**
  *
  * @author fustdag <br>
@@ -36,14 +42,14 @@ public class HeroFactory implements AbstractFactory<Hero>{
      */
     private void setAttributes(Hero hero) {
         if (hero.getHeroType().compareTo(HeroPersonality.ANGRY) == 0) {
-            hero.setStrength(60);
+            hero.setStrength(ANGRY_HERO_STRENGTH);
         }else if (hero.getHeroType().compareTo(HeroPersonality.COMMANDER) == 0)  {
-            hero.setStrength(90);
+            hero.setStrength(COMMANDER_HERO_STRENGTH);
         }else if (hero.getHeroType().compareTo(HeroPersonality.DEBATER) == 0) {
-            hero.setStrength(50);
+            hero.setStrength(DEBATER_HERO_STRENGTH);
         }
-            hero.setHealth(100);
-            hero.setExperience(0);
+            hero.setHealth(HERO_HEALTH);
+            hero.setExperience(HERO_EXPERIENCE);
     }
 
 }

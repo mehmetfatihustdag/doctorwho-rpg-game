@@ -1,6 +1,5 @@
 package com.company.constant;
 
-
 /**
  *
  * @author fustdag <br>
@@ -14,8 +13,6 @@ public class GameConstants {
     }
 
     //Application Constants
-    public static final String HERO   = "HERO";
-    public static final String ALIEN = "MONSTER";
     public static final String GAME_START = "Game has been started..." + System.lineSeparator() + "For quit:type (quit) ..";
     public static final String ASK_LOAD_GAME = "Do you want to load a game? (y/n) " +"For quit:type (quit) .." +System.lineSeparator() + ">";
     public static final String ASK_NAME ="Please, enter your name ...";
@@ -35,5 +32,27 @@ public class GameConstants {
     public static final String MYSTERY_OF_DEATHPLANET ="Who discovered the Black Hole ?";
     public static final String ANSWER_OF_DEATHPLANET ="KARL";
     public static final Integer DEATH_PLANET_EXPERIENCE_HIT = 50;
+
+    //Character Constants
+    public static final Integer ANGRY_HERO_STRENGTH =60;
+    public static final Integer COMMANDER_HERO_STRENGTH =90;
+    public static final Integer DEBATER_HERO_STRENGTH =50;
+
+    public static final Integer HERO_EXPERIENCE= 0;
+    public static final Integer HERO_HEALTH= 100;
+
+    public static final Integer DALEK_STRENGTH =40;
+    public static final Integer DALEK_ATTACK  =25;
+
+    public static final Integer CYBERMAN_STRENGTH =90;
+    public static final Integer CYBERMAN_ATTACK  =40;
+
+    public static final Integer DEMON_STRENGTH=90;
+    public static final Integer DEMON_ATTACK  =30;
+
+    public static final Integer ALIEN_HEALTH = 100;
+
+
+
 
 }

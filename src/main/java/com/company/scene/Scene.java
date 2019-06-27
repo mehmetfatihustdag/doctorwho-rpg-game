@@ -1,6 +1,7 @@
 package com.company.scene;
 
 import com.company.entities.AlienRace;
+import com.company.entities.CharacterType;
 import com.company.entities.Hero;
 import com.company.entities.Alien;
 import com.company.factory.AbstractFactory;
@@ -9,7 +10,6 @@ import com.company.util.scanner.Input;
 
 import java.util.Objects;
 
-import static com.company.constant.GameConstants.ALIEN;
 /**
  *
  * @author fustdag <br>
@@ -30,7 +30,7 @@ public interface Scene {
     Integer alienAttack(AlienRace alienRace);
 
     default Alien createAlien(String name, String alienRace) {
-        AbstractFactory abstractFactory = FactoryProvider.getFactory(ALIEN);
+        AbstractFactory abstractFactory = FactoryProvider.getFactory(CharacterType.ALIEN);
         return (Alien) Objects.requireNonNull(abstractFactory).create(name, alienRace);
     }
 
