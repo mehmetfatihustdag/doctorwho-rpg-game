@@ -3,6 +3,14 @@ package com.company.factory;
 import com.company.entities.Alien;
 import com.company.entities.AlienRace;
 
+import static com.company.constant.GameConstants.ALIEN_HEALTH;
+import static com.company.constant.GameConstants.CYBERMAN_ATTACK;
+import static com.company.constant.GameConstants.CYBERMAN_STRENGTH;
+import static com.company.constant.GameConstants.DALEK_ATTACK;
+import static com.company.constant.GameConstants.DALEK_STRENGTH;
+import static com.company.constant.GameConstants.DEMON_ATTACK;
+import static com.company.constant.GameConstants.DEMON_STRENGTH;
+
 /**
  *
  * @author fustdag <br>
@@ -37,17 +45,17 @@ public class AlienFactory implements AbstractFactory<Alien> {
      */
     private void setAttributes(Alien alien) {
         if (alien.getAlienRace().compareTo(AlienRace.DALEK) == 0) {
-            alien.setStrength(40);
-            alien.setAttack(25);
+            alien.setStrength(DALEK_STRENGTH);
+            alien.setAttack(DALEK_ATTACK);
         }else if (alien.getAlienRace().compareTo(AlienRace.CYBERMEN) == 0)  {
-            alien.setStrength(90);
-            alien.setAttack(40);
+            alien.setStrength(CYBERMAN_STRENGTH);
+            alien.setAttack(CYBERMAN_ATTACK);
 
         }else if (alien.getAlienRace().compareTo(AlienRace.DEMON) == 0) {
-            alien.setStrength(90);
-            alien.setAttack(30);
+            alien.setStrength(DEMON_STRENGTH);
+            alien.setAttack(DEMON_ATTACK);
         }
-        alien.setHealth(100);
+        alien.setHealth(ALIEN_HEALTH);
     }
 
 }

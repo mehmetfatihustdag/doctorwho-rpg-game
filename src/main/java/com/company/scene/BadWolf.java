@@ -5,6 +5,7 @@ import com.company.entities.AlienRace;
 import com.company.entities.Hero;
 import com.company.entities.Item;
 import com.company.util.CommonUtil;
+import com.company.util.scanner.Input;
 
 import java.util.List;
 import java.util.stream.Collectors;

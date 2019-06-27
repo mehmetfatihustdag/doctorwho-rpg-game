@@ -2,6 +2,7 @@ package com.company.test.main;
 
 import com.company.constant.GameConstants;
 import com.company.entities.AlienRace;
+import com.company.entities.CharacterType;
 import com.company.entities.Hero;
 import com.company.entities.HeroPersonality;
 import com.company.factory.FactoryProvider;
@@ -77,7 +78,7 @@ public class TestGamePlay {
         //Correct Answer To Mysteries
         systemInMockFirstCase.provideLines(GameConstants.ANSWER_OF_BADWOLF,GameConstants.ANSWER_OF_DEATHPLANET,GameConstants.ANSWER_OF_PANDORICA);
         Hero hero;
-        HeroFactory heroFactory = (HeroFactory) FactoryProvider.getFactory(GameConstants.HERO);
+        HeroFactory heroFactory = (HeroFactory) FactoryProvider.getFactory(CharacterType.HERO);
         //BadWolf
         hero =heroFactory.create("fatih", HeroPersonality.COMMANDER.name());
         SceneContext badWolfContexr = new SceneContext(new BadWolf(), AlienRace.DALEK,30);

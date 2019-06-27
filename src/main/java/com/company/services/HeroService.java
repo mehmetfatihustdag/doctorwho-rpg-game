@@ -16,6 +16,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import static com.company.entities.CharacterType.HERO;
+
 /**
  *
  * @author fustdag <br>
@@ -40,7 +42,7 @@ public class HeroService implements IHeroService {
      */
     @Override
      public Hero createHero(String name, HeroPersonality heroType)  {
-        HeroFactory heroFactory= (HeroFactory)FactoryProvider.getFactory(GameConstants.HERO);
+        HeroFactory heroFactory= (HeroFactory)FactoryProvider.getFactory(HERO);
         return heroFactory.create(name,heroType.name());
     }
     /**
@@ -55,8 +57,6 @@ public class HeroService implements IHeroService {
             return gameRepository.loadGame();
         } catch (Exception e) {
             System.out.println("Doctor could not be loaded");
-            System.out.println(e.getStackTrace());
-            System.out.println(e.getMessage());
         }
         return null;
     }
