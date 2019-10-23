@@ -52,6 +52,8 @@ public class GameConstants {
 
     public static final Integer ALIEN_HEALTH = 100;
 
+    public static final Integer dummy =10000;
+
 
 
 
